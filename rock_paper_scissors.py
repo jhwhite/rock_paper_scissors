@@ -17,7 +17,7 @@ def rps(choice):
     player_choice = choice.lower()    
     computer_choice = get_computer_move()
     winner = "computer"
-    
+
     if player_choice == computer_choice:
         winner = "tie"
     if player_choice == "rock" and computer_choice == "scissors":
@@ -29,4 +29,4 @@ def rps(choice):
     
     return render_template("rps.html", winner=winner, player_choice=player_choice, computer_choice=computer_choice)
 
-app.run(debug=True)
+app.run()
