@@ -25,6 +25,6 @@ def rps(choice):
     if player_choice == "paper" and computer_choice == "rock":
         winner = "player"
     
-    return render_template("rps.html", winner=winner.capitalize(), player_choice=player_choice, computer_choice=computer_choice)
+    return render_template("rps.html", winner=winner, player_choice=player_choice, computer_choice=computer_choice)
 
 app.run(debug=True)

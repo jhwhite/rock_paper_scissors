@@ -3,8 +3,14 @@
 {% block title %} {{super()}} | Game {% endblock %}
 
 {% block content %}
-<h1></h1>
 <p>Player chose: {{ player_choice }}</p>
 <p>Computer chose: {{ computer_choice }}</p>
-<h1>{{ winner }} WINS!</h1>
+
+{% if winner == 'tie' %}
+<h1>There was a tie!</h1>
+<h2>Play again!</h2>
+
+{% else %}
+<h1>{{ winner.capitalize() }} WINS!</h1>
+{% endif %}
 {% endblock%}
