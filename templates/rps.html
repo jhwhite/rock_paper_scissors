@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block title %} {{super()}} | Game {% endblock %}
+
+{% block content %}
+<h1></h1>
+<p>Player chose: {{ player_choice }}</p>
+<p>Computer chose: {{ computer_choice }}</p>
+<h1>{{ winner }} WINS!</h1>
+{% endblock%}
