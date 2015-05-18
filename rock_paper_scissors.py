@@ -29,4 +29,4 @@ def rps(choice):
     
     return render_template("rps.html", winner=winner, player_choice=player_choice, computer_choice=computer_choice)
 
-app.run(debug=True, port=33507)
+app.run(port=33507)
