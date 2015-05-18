@@ -29,4 +29,5 @@ def rps(choice):
     
     return render_template("rps.html", winner=winner, player_choice=player_choice, computer_choice=computer_choice)
 
-app.run(port=33507)
+if __name__ == "__main__":
+    app.run()
