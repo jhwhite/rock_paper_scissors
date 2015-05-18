@@ -4,18 +4,20 @@ import random
 
 app = Flask(__name__)
 
+def get_computer_move():
+    options = ["rock", "paper", "scissors"]
+    return options[random.randint(0,2)]
+
 @app.route('/')
 def index():
     return render_template("index.html")
 
 @app.route('/rps/<choice>')
 def rps(choice):
-    options = ["rock", "paper", "scissors"]
+    player_choice = choice.lower()    
+    computer_choice = get_computer_move()
     winner = "computer"
-    player_choice = choice.lower()
     
-    computer_choice = options[random.randint(0,2)]
-
     if player_choice == computer_choice:
         winner = "tie"
     if player_choice == "rock" and computer_choice == "scissors":
