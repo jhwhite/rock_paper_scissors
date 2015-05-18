@@ -16,6 +16,8 @@ def rps(choice):
     
     computer_choice = options[random.randint(0,2)]
 
+    if player_choice == computer_choice:
+        winner = "tie"
     if player_choice == "rock" and computer_choice == "scissors":
         winner = "player"
     if player_choice == "scissors" and computer_choice == "paper":
