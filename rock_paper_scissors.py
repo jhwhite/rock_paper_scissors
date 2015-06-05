@@ -8,14 +8,7 @@ def get_computer_move():
     options = ["rock", "paper", "scissors"]
     return options[random.randint(0,2)]
 
-@app.route('/')
-def index():
-    return render_template("index.html")
-
-@app.route('/rps/<choice>')
-def rps(choice):
-    player_choice = choice.lower()    
-    computer_choice = get_computer_move()
+def get_winner(player_choice, computer_choice):
     winner = "computer"
 
     if player_choice == computer_choice:
@@ -26,6 +19,18 @@ def rps(choice):
         winner = "player"
     if player_choice == "paper" and computer_choice == "rock":
         winner = "player"
+
+    return winner
+
+@app.route('/')
+def index():
+    return render_template("index.html")
+
+@app.route('/rps/<choice>')
+def rps(choice):
+    player_choice = choice.lower()    
+    computer_choice = get_computer_move()
+    winner = get_winner(player_choice, computer_choice)
     
     return render_template("rps.html", winner=winner, player_choice=player_choice, computer_choice=computer_choice)
 
